@@ -1,11 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <MassStoragePlatform.label>mass storage platform</MassStoragePlatform.label>
   <MassStoragePlatform.description>A device that can efficiently and quicky convert items between C3A1(physical) and C0A4(non-physical) form. It can store up to 2 billion non-quality, non-corpse items in itself. Only one type of item allowed. Power consumption: 100W idle, 200W 10 items, 400W 100 items, 800W 1000 items etc.\n\nEggs stored in internal storage are reset back to 0% and cannot grow in internal storage.</MassStoragePlatform.description>
   <MassStoragePlatform_Blueprint.label>mass storage platform (blueprint)</MassStoragePlatform_Blueprint.label>
   <MassStoragePlatform_Frame.label>mass storage platform (building)</MassStoragePlatform_Frame.label>
   <MassStoragePlatform_Frame.description>A device that can efficiently and quicky convert items between C3A1(physical) and C0A4(non-physical) form. It can store up to 2 billion non-quality, non-corpse items in itself. Only one type of item allowed. Power consumption: 100W idle, 200W 10 items, 400W 100 items, 800W 1000 items etc.\n\nEggs stored in internal storage are reset back to 0% and cannot grow in internal storage.</MassStoragePlatform_Frame.description>
-
-
 </LanguageData>

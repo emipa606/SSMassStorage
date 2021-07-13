@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>[SS] Mass Storage (Continued)</name>
   <packageId>Mlie.SSMassStorage</packageId>
@@ -7,6 +7,7 @@
   <supportedVersions>
     <li>1.1</li>
     <li>1.2</li>
+    <li>1.3</li>
   </supportedVersions>
   <modDependencies>
     <li>
@@ -19,19 +20,22 @@
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
-  <description>Update of Spdskatrs mod for RimWorld 1.1
+  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
+Update of Spdskatrs mod
 https://ludeon.com/forums/index.php?topic=30813.msg320423#msg320423
 
-[img]https://i.imgur.com/GYswkZ7.png[/img]
+[img]https://i.imgur.com/7Gzt3Rg.png[/img]
 
-Support-chat:
-https://invite.gg/mlie
-
-Non-steam version:
-https://github.com/emipa606/SSMassStorage
+[table]
+	[tr]
+		[td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
+		[td][url=https://github.com/emipa606/SSMassStorage][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+	[/tr]
+[/table]
 	
---- Original Description ---
-SS Mass Storage is an endgame storage solution for storing up to 2 147 483 647 items of the same kind which couldn't possibly fit in any stockpile. It sucks items from the stockpile it is in and adds it to its internal storage.
+[img]https://i.imgur.com/NOW7jU1.png[/img]
+
+SS Mass Storage is an endgame storage solution for storing up to 2 147 483 647 items of the same kind which couldn&apos;t possibly fit in any stockpile. It sucks items from the stockpile it is in and adds it to its internal storage.
 
 Like a Deep Storage Unit in Minecraft, it can internally store up to exactly 2 147 483 647 items. It can also store 300 items on top of itself, making it 2 147 483 947 items altogether.
 
@@ -46,5 +50,18 @@ After research, place building on top of stockpile. Then, set its storage settin
 You can see how many items are stored internally by selecting it.
 
 ====MOD CONFLICTS====
-None. (duh it's just a machine)</description>
+None. (duh it&apos;s just a machine)
+
+
+[img]https://i.imgur.com/Rs6T6cr.png[/img]
+[list]
+[*] See if the the error persists if you just have this mod and its requirements active.
+[*] If not, try adding your other mods until it happens again.
+[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] and command Ctrl+F12
+[*] For best support, please use the Discord-channel for error-reporting.
+[*] Do not report errors by making a discussion-thread, I get no notification of that.
+[*] If you have the solution for a problem, please post it to the GitHub repository.
+[/list]
+</description>
 </ModMetaData>
+
