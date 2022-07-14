@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>[SS] Mass Storage (Continued)</name>
   <packageId>Mlie.SSMassStorage</packageId>
@@ -20,22 +20,26 @@
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
-  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
+  <description>[img]https://i.imgur.com/buuPQel.png[/img]
 Update of Spdskatrs mod
 https://ludeon.com/forums/index.php?topic=30813.msg320423#msg320423
 
-[img]https://i.imgur.com/7Gzt3Rg.png[/img]
+[img]https://i.imgur.com/pufA0kM.png[/img]
 
 [table]
 	[tr]
 		[td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
 		[td][url=https://github.com/emipa606/SSMassStorage][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
-	[/tr]
+    [/tr]
+    [tr]
+        [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
+        [td][img]https://i.imgur.com/Be8E2qJ.png[/img][/td]
+    [/tr]
 [/table]
 	
-[img]https://i.imgur.com/NOW7jU1.png[/img]
+[img]https://i.imgur.com/Z4GOv8H.png[/img]
 
-SS Mass Storage is an endgame storage solution for storing up to 2 147 483 647 items of the same kind which couldn&apos;t possibly fit in any stockpile. It sucks items from the stockpile it is in and adds it to its internal storage.
+SS Mass Storage is an endgame storage solution for storing up to 2 147 483 647 items of the same kind which couldn't possibly fit in any stockpile. It sucks items from the stockpile it is in and adds it to its internal storage.
 
 Like a Deep Storage Unit in Minecraft, it can internally store up to exactly 2 147 483 647 items. It can also store 300 items on top of itself, making it 2 147 483 947 items altogether.
 
@@ -50,10 +54,10 @@ After research, place building on top of stockpile. Then, set its storage settin
 You can see how many items are stored internally by selecting it.
 
 ====MOD CONFLICTS====
-None. (duh it&apos;s just a machine)
+None. (duh it's just a machine)
 
 
-[img]https://i.imgur.com/Rs6T6cr.png[/img]
+[img]https://i.imgur.com/PwoNOj4.png[/img]
 [list]
 [*] See if the the error persists if you just have this mod and its requirements active.
 [*] If not, try adding your other mods until it happens again.
@@ -64,4 +68,3 @@ None. (duh it&apos;s just a machine)
 [/list]
 </description>
 </ModMetaData>
-
