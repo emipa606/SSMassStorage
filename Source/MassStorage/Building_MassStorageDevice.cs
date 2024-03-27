@@ -154,7 +154,7 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
 
         if (StoredIsRottable)
         {
-            var unused = rotProgressInt;
+            _ = rotProgressInt;
             var num = 1f;
             var temperatureForCell = GenTemperature.GetTemperatureForCell(Position, Map);
             num *= GenTemperature.RotRateAtTemperature(temperatureForCell);
@@ -186,7 +186,7 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
             }
 
             var thingsAtCell = (from Thing t in cell.GetThingList(Map)
-                where t.def.category == ThingCategory.Item && !(t is Corpse) && t.def.EverHaulable &&
+                where t.def.category == ThingCategory.Item && t is not Corpse && t.def.EverHaulable &&
                       !t.TryGetQuality(out _) && !t.def.MadeFromStuff && (t.TryGetComp<CompForbiddable>() == null ||
                                                                           !t.TryGetComp<CompForbiddable>()
                                                                               .Forbidden)
