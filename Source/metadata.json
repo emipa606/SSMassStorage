@@ -2,5 +2,16 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "2",
-  "PreviewVersion": "1.5"
+  "PreviewVersion": "1.6",
+  "SocialImageSet": true,
+  "SearchTags": [
+    "endgame",
+    " storage"
+  ],
+  "LastXmlCleaning": "2025-07-05T15:01:30.2996737+02:00",
+  "Patches": false,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 13916.0,
+  "LinesOfXML": 3949.0
 }

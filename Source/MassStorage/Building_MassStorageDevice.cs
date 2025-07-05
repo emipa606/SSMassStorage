@@ -11,12 +11,12 @@ namespace StockpileAugmentations;
 
 public class Building_MassStorageDevice : Building, IStoreSettingsParent
 {
-    public float rotProgressInt;
-    public StorageSettings settings;
-    public ThingDef storedDef;
+    private float rotProgressInt;
+    private StorageSettings settings;
+    private ThingDef storedDef;
     public int ThingCount;
 
-    public Zone_Stockpile ResidingZone => Position.GetZone(Map) != null && Position.GetZone(Map) is Zone_Stockpile
+    private Zone_Stockpile ResidingZone => Position.GetZone(Map) != null && Position.GetZone(Map) is Zone_Stockpile
         ? Position.GetZone(Map) as Zone_Stockpile
         : null;
 
@@ -24,9 +24,9 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
 
     public int maxCount => 2147483647;
 
-    public CompPowerTrader PowerTraderComp => GetComp<CompPowerTrader>();
+    private CompPowerTrader PowerTraderComp => GetComp<CompPowerTrader>();
 
-    public int ItemsStoredExternally
+    private int ItemsStoredExternally
     {
         get
         {
@@ -38,9 +38,9 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
         }
     }
 
-    public bool StoredIsRottable => storedDef?.GetCompProperties<CompProperties_Rottable>() != null;
+    private bool StoredIsRottable => storedDef?.GetCompProperties<CompProperties_Rottable>() != null;
 
-    public int TicksUntilRotAtCurrentTemp
+    private int TicksUntilRotAtCurrentTemp
     {
         get
         {
@@ -75,7 +75,7 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
 
     public override string GetInspectString()
     {
-        var thingName = storedDef != null ? ThingCount + "x " + storedDef.label.CapitalizeFirst() : "nothing";
+        var thingName = storedDef != null ? $"{ThingCount}x {storedDef.label.CapitalizeFirst()}" : "nothing";
         var stringBuilder = new StringBuilder();
         stringBuilder.AppendLine(base.GetInspectString());
         stringBuilder.AppendFormat("In internal storage: {0} (Item(s) stored externally: {1})", thingName,
@@ -116,7 +116,7 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
         }
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         float powerMultiplier = ThingCount > 1 ? (int)Math.Floor(Math.Log10(ThingCount)) : 0;
@@ -145,7 +145,7 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
         TickRottables();
     }
 
-    public void TickRottables()
+    private void TickRottables()
     {
         if (storedDef == null || Find.TickManager.TicksAbs % 250 != 0)
         {
@@ -176,7 +176,7 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
         }
     }
 
-    public void CollectApplicableItems()
+    private void CollectApplicableItems()
     {
         foreach (var cell in ResidingZone.cells)
         {
@@ -204,7 +204,7 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
         }
     }
 
-    public void TrySpawnItemsAtOutput(List<IntVec3> clist)
+    private void TrySpawnItemsAtOutput(List<IntVec3> clist)
     {
         foreach (var cell in clist)
         {
@@ -251,7 +251,7 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
         }
     }
 
-    public void CheckIfStorageInvalid(List<IntVec3> clist)
+    private void CheckIfStorageInvalid(List<IntVec3> clist)
     {
         if (clist.FindAll(intvec => intvec.GetFirstItem(Map) != null).NullOrEmpty() && storedDef != null &&
             ThingCount <= 0)
@@ -292,10 +292,7 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
             defaultDesc = "If no item stored, adds Steel.",
             action = delegate
             {
-                if (storedDef == null)
-                {
-                    storedDef = ThingDefOf.Steel;
-                }
+                storedDef ??= ThingDefOf.Steel;
 
                 ThingCount += 1000000;
             },
@@ -313,7 +310,7 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
         };
     }
 
-    public virtual void AcceptItem(Thing t)
+    protected virtual void AcceptItem(Thing t)
     {
         if (storedDef == null)
         {
@@ -346,7 +343,7 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
         t.def.soundDrop.PlayOneShot(SoundInfo.InMap(new TargetInfo(Position, Map)));
     }
 
-    public void DropAll(bool disableItem = false)
+    private void DropAll(bool disableItem = false)
     {
         if (storedDef == null)
         {

@@ -19,18 +19,16 @@ public static class OnStartup
     {
         var harmony = new Harmony("net.spdskatr.factoryframework.patches");
         harmony.Patch(typeof(ResourceCounter).GetMethod(nameof(ResourceCounter.UpdateResourceCounts)), null,
-            new HarmonyMethod(typeof(OnStartup), nameof(ResourceCounterPostfix)));
+            new HarmonyMethod(typeof(OnStartup), nameof(resourceCounterPostfix)));
     }
 
-    private static void ResourceCounterPostfix(ResourceCounter __instance)
+    private static void resourceCounterPostfix(Map ___map, ref Dictionary<ThingDef, int> ___countedAmounts)
     {
-        var countedAmounts = Traverse.Create(__instance).Field("countedAmounts")
-            .GetValue<Dictionary<ThingDef, int>>();
-        var map = Traverse.Create(__instance).Field("map").GetValue<Map>();
+        var countedAmounts = ___countedAmounts;
 
         try
         {
-            map.listerBuildings.allBuildingsColonist.OfType<Building_MassStorageDevice>().ToList()
+            ___map.listerBuildings.allBuildingsColonist.OfType<Building_MassStorageDevice>().ToList()
                 .FindAll(b => b.internalStoredDef != null && b.ThingCount > 0)
                 .ForEach(storage =>
                 {
@@ -42,11 +40,11 @@ public static class OnStartup
         }
         catch (Exception ex)
         {
-            Log.Error("SS Mass Storage caught exception while editing resource counts: " + ex);
+            Log.Error($"SS Mass Storage caught exception while editing resource counts: {ex}");
         }
         finally
         {
-            Traverse.Create(__instance).Field("countedAmounts").SetValue(countedAmounts);
+            ___countedAmounts = countedAmounts;
         }
     }
 }
