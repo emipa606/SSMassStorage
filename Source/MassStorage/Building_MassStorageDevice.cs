@@ -11,10 +11,10 @@ namespace StockpileAugmentations;
 
 public class Building_MassStorageDevice : Building, IStoreSettingsParent
 {
+    public int ThingCount;
     private float rotProgressInt;
     private StorageSettings settings;
     private ThingDef storedDef;
-    public int ThingCount;
 
     private Zone_Stockpile ResidingZone => Position.GetZone(Map) != null && Position.GetZone(Map) is Zone_Stockpile
         ? Position.GetZone(Map) as Zone_Stockpile
@@ -100,10 +100,10 @@ public class Building_MassStorageDevice : Building, IStoreSettingsParent
         Scribe_Deep.Look(ref settings, "settings", this);
     }
 
-    public override void DeSpawn(DestroyMode destroyMode = DestroyMode.Vanish)
+    public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
     {
         DropAll();
-        base.DeSpawn(destroyMode);
+        base.DeSpawn(mode);
     }
 
     public override void PostMake()

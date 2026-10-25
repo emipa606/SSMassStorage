@@ -3,4 +3,14 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="MassStorage/MassStorage.csproj" />
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/XML/Defs/">
+    <File Path="../Defs/Buildings.xml" />
+    <File Path="../Defs/Research.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
 </Solution>
